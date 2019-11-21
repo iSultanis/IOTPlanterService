@@ -14,5 +14,10 @@ module.exports = {
         sensorRepository.postSensorData(sensorData);
         res.status(200);
         res.send({lux, temp, humidity, date, id});
+    },
+    getSensorData: async function (req, res) {
+        let sensorData = await sensorRepository.getSensorData(req.params.id);
+        console.log("data: \n" + sensorData)
+        res.status(200).send(sensorData);
     }
 };

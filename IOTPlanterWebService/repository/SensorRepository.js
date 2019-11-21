@@ -1,5 +1,5 @@
 var pgp = require('pg-promise')(/* options */);
-var db = pgp('postgres://postgres:postgres@localhost:5432/IOTPlanterDB');
+var db = pgp(process.env.DB_HOST+"://"+process.env.DB_USER+":"+process.env.DB_PASS+"@localhost:5433/IOTPlanterDB"); // last proges in file is password
 
 module.exports = {
     postSensorData: function (sensorData) {
@@ -11,5 +11,14 @@ module.exports = {
             .catch(function (error) {
                 console.log('ERROR:', error)
             })
+    },
+    getSensorData: async function (id) {
+        console.log(process.env.DB_HOST);
+        return db.any("SELECT * FROM sensor_read WHERE plantid=$1", id)
+            .catch(function (error) {
+                console.log('ERROR:', error)
+            });
+
+        return await sensordata;
     }
 };
