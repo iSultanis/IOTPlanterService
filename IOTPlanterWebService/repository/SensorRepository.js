@@ -1,5 +1,5 @@
 var pgp = require('pg-promise')(/* options */);
-var db = pgp(process.env.DB_HOST+"://"+process.env.DB_USER+":"+process.env.DB_PASS+"@localhost:5433/IOTPlanterDB"); // last proges in file is password
+var db = pgp(process.env.DB_HOST+"://"+process.env.DB_USER+":"+process.env.DB_PASS+"@localhost:"+process.env.DB_PORT+"/IOTPlanterDB"); // last proges in file is password
 
 module.exports = {
     postSensorData: function (sensorData) {
