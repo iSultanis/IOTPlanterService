@@ -14,11 +14,10 @@ module.exports = {
     },
     getSensorData: async function (id) {
         console.log(process.env.DB_HOST);
-        return db.any("SELECT * FROM sensor_read WHERE plantid=$1", id)
+        return await db.any("SELECT * FROM sensor_read", id)
             .catch(function (error) {
                 console.log('ERROR:', error)
             });
 
-        return await sensordata;
     }
 };

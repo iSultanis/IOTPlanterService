@@ -1,0 +1,26 @@
+html
+    head
+        title Planter Service
+body
+    h1  Welcome to #{title}
+    - const planterlist = planters
+    div.planter
+        table
+            tr
+                th id
+                th lux
+                th humidity
+                th temp
+                th date
+            each planter in planterlist
+                tr
+                    td= planter.id
+                    td= planter.lux
+                    td= planter.humidity + " %"
+                    td= planter.temperature + " °C"
+                    td= new Date(planter.readTime).toString()
+// -for (var i = 0; i <planters.length; i++)
+//      p #{i}
+//          #{planters[i].lux}
+//          #{planters[i].humidity} %
+//          #{planters[i].temperature}

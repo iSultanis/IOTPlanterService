@@ -17,7 +17,7 @@ module.exports = {
     },
     getSensorData: async function (req, res) {
         let sensorData = await sensorRepository.getSensorData(req.params.id);
-        console.log("data: \n" + sensorData)
+        console.log("data: \n" + sensorData);
         res.status(200).send(sensorData);
     }
 };
