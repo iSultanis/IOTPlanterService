@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+#planterlist {margin: auto;width: 40%;}
+.plantbox {border:3px solid lightseagreen; padding: 10px; margin-bottom: 10px; border-radius: 10px}
+.header {font-weight: bolder}
+.subtext {font-style: italic}
+div p {font-weight: bold}
+.subblock div {width: 47%; display: inline-block; min-width: 215px; font-weight: bolder}
