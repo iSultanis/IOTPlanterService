@@ -3,7 +3,7 @@ var db = pgp(process.env.DB_HOST+"://"+process.env.DB_USER+":"+process.env.DB_PA
 
 module.exports = {
     postSensorData: function (sensorData) {
-        db.none('INSERT INTO sensor_read (plantid, lux, temperature, humidity, readtime) VALUES ($1, $2, $3, $4, $5);'
+        db.none('INSERT INTO sensor_read (plant_id, lux, temperature, humidity, readtime) VALUES ($1, $2, $3, $4, $5);'
             , [sensorData.plantid, sensorData.lux, sensorData.temperature, sensorData.humidity, sensorData.readTime])
             // .then(function (data) {
             //     console.log('DATA:', data.value)
