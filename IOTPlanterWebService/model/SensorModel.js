@@ -1,4 +1,4 @@
-module.exports = function CompanyModel(id, plantid, lux, temperature, humidity, readTime) {
+module.exports = function PlanterModel(id, plantid, lux, temperature, humidity, readTime) {
     this.id = id;
     this.plantid = plantid;
     this.lux = lux;
