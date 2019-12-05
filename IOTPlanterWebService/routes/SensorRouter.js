@@ -8,6 +8,6 @@ sensorRouter.post('/', function(req, res, next) {
 
 sensorRouter.get('/:id', function (req, res ,next) {
     sensorController.getSensorData(req, res);
-})
+});
 
 module.exports = sensorRouter;
