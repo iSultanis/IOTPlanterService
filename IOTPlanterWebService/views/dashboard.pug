@@ -24,6 +24,7 @@ body
             div.plantbox
                 h1.header common name
                 h2.subtext latin name
+                p(style = {fontStyle: "italics"})= "latest reading at :"+ planter.readtime
                 div
                     img(src="/files/sun.png" style= {display: "inline-block", height: "1em"})
                     p(style = {display: "inline-block"})= "Light level: "+ planter.lux
