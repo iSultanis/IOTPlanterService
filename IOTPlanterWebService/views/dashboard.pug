@@ -1,26 +1,38 @@
 html
     head
         title Planter Service
+        link(rel='stylesheet', href='/stylesheets/style.css')
 body
-    h1  Welcome to #{title}
     - const planterlist = planters
-    div.planter
-        table
-            tr
-                th id
-                th lux
-                th humidity
-                th temp
-                th date
-            each planter in planterlist
-                tr
-                    td= planter.id
-                    td= planter.lux
-                    td= planter.humidity + " %"
-                    td= planter.temperature + " °C"
-                    td= new Date(planter.readTime).toString()
-// -for (var i = 0; i <planters.length; i++)
-//      p #{i}
-//          #{planters[i].lux}
-//          #{planters[i].humidity} %
-//          #{planters[i].temperature}
+    //div.planter
+    //    table
+    //        tr
+    //            th id
+    //            th lux
+    //            th humidity
+    //            th temp
+    //            th date
+    //        each planter in planterlist
+    //            tr
+    //                td= planter.id
+    //                td= planter.lux
+    //                td= planter.humidity + " %"
+    //                td= planter.temperature + " °C"
+    //                td= planter.readtime
+    div#planterlist
+        each planter in planterlist
+            div.plantbox
+                h1.header common name
+                h2.subtext latin name
+                p(style = {fontStyle: "italics"})= "latest reading at :"+ planter.readtime
+                div
+                    img(src="/files/sun.png" style= {display: "inline-block", height: "1em"})
+                    p(style = {display: "inline-block"})= "Light level: "+ planter.lux
+                div.subblock
+                    div
+                        img(src="/files/temperature.png" style= {display: "inline-block", height: "1em"})
+                        div= "Temperature: "+ planter.temperature + " °C"
+                    div
+                        img(src="/files/water.png" style= {display: "inline-block", height: "1em"})
+                        div= "Humidty: "+ planter.humidity+ " %"
+

@@ -6,8 +6,7 @@ var repo = require('../repository/SensorRepository');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-    var result = await repo.getSensorData(1)
-    console.log(result.readTime);
+    var result = await repo.getSensorData(1);
     res.render('dashboard', { planters: result});
 });
 
