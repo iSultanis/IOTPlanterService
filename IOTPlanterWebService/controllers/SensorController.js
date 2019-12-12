@@ -24,7 +24,7 @@ module.exports = {
         } else if (sensorData[0].humidity <= 950) {
             sensorData[0].humidity = sensorData[0].humidity + ": In water";
         }
-        console.log("data: \n" + sensorData);
+        //console.log("data: \n" + sensorData);
         res.status(200).send(sensorData);
     }
 };
